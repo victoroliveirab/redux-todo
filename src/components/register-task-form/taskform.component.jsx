@@ -7,6 +7,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class TaskForm extends React.Component {
+    // Components can have their own state even with redux. As we are not propagating the state to any component, we can keep it separate
     constructor(props) {
         super(props);
         this.state = {
@@ -17,8 +18,10 @@ class TaskForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         const { description } = this.state;
-        this.props.addTask({ description });
-        this.clearField();
+        if (description.length > 0) {
+            this.props.addTask({ description }); // thanks to connect and mapDispatchToProps
+            this.clearField();
+        }
     };
 
     clearField = () => this.setState({ description: "" });
@@ -37,6 +40,7 @@ class TaskForm extends React.Component {
                     name="description"
                     value={description}
                     onChange={this.handleChange}
+                    id="form-field"
                 />
                 <button type="submit">Add to List</button>
             </form>

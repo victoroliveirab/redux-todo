@@ -12,6 +12,19 @@ html {
     scroll-behavior: smooth;
 }
 
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #f00;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+
 h1 {
     font-size: 6.4rem;
     text-align: center;
@@ -31,4 +44,13 @@ li {
 form {
     margin-top: 28px;
     text-align: center;
+}
+
+#form-field,
+button {
+    line-height: 2;
+}
+
+button {
+    width: 100px;
 }
