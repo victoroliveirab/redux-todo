@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux"; // superpowers component with redux
+import Task from "../task/task.component";
 
 const mapStateToProps = state => ({
     tasks: state.task.tasks
@@ -10,7 +11,7 @@ const TaskList = ({ tasks }) => {
     return (
         <ul>
             {tasks.map(task => (
-                <li key={task.id}>{task.description}</li>
+                <Task key={task.id} {...task} />
             ))}
         </ul>
     );

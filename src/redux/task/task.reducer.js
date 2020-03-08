@@ -22,9 +22,11 @@ const taskReducer = (state = INITIAL_STATE, action) => {
     // A new object is returned because redux's philosophy is that states are immutable
     switch (action.type) {
         case "ADD_TASK":
+            const id = state.tasks[state.tasks.length - 1].id + 1;
+            const { description } = action.payload;
             return {
                 ...state,
-                tasks: state.tasks.concat(action.payload)
+                tasks: state.tasks.concat({ id, description })
             };
         case "REMOVE_TASK":
             return;

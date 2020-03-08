@@ -15,18 +15,20 @@ html {
 h1 {
     font-size: 6.4rem;
     text-align: center;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 
 ul {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: left;
+    text-align: center;
     line-height: 1.4;
 }
 
 li {
     font-size: 1.8rem;
+}
+
+form {
+    margin-top: 28px;
+    text-align: center;
 }
